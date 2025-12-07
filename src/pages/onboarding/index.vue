@@ -53,7 +53,7 @@ const handlePhotoCapture = (imageData: string) => {
   capturedImage.value = imageData
   // Simulate AI extraction
   const extractedData = {
-    fullName: 'Kiki Zhu',
+    fullName: 'Alex Tian Ye',
     title: 'Founder & CEO',
     company: 'Immedi.AI',
     email: 'alex@immedi.ai',

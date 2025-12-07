@@ -112,9 +112,9 @@ export const alexTianYeCard: BusinessCard = {
   slug: 'alextianye',
   
   personal: {
-    fullName: 'Kiki Zhu',
-    firstName: 'Kiki',
-    lastName: 'Zhu',
+    fullName: 'Alex Tian Ye',
+    firstName: 'Alex',
+    lastName: 'Tian Ye',
     chineseName: '田野',
     avatar: '/static/logo.png',
     title: 'Founder & AI Enabler',
@@ -380,7 +380,7 @@ export const alexTianYeCard: BusinessCard = {
 
   ai: {
     enabled: true,
-    summary: 'Kiki Zhu is a visionary entrepreneur bridging the gap between AI technology and practical business applications. As founder of both 12EAT.ai and Immedi.AI, she brings unique expertise in F&B technology and enterprise AI solutions, with a strong focus on serving the overseas Chinese community and enabling sustainable business growth.',
+    summary: 'Alex Tian Ye is a visionary entrepreneur bridging the gap between AI technology and practical business applications. As founder of both 12EAT.ai and Immedi.AI, he brings unique expertise in F&B technology and enterprise AI solutions, with a strong focus on serving the overseas Chinese community and enabling sustainable business growth.',
     conversationStarter: 'Ask me about AI implementation strategies, F&B technology solutions, or building platforms for multicultural communities!',
     insights: [
       'Pioneer in AI-powered F&B solutions for Chinese diaspora',

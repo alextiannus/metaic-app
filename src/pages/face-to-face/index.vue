@@ -44,7 +44,7 @@
               <text class="qr-placeholder">QR CODE</text>
             </view>
           </view>
-          <text class="qr-name">Kiki Zhu</text>
+          <text class="qr-name">Alex Tian Ye</text>
           <text class="qr-url">metaic.ai/u/alextianye</text>
         </view>
 

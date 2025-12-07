@@ -17,7 +17,7 @@
         <view class="form-fields">
           <view class="field">
             <text class="field-label">Full Name <text class="required">*</text></text>
-            <input v-model="formData.fullName" type="text" placeholder="Kiki Zhu" class="field-input" />
+            <input v-model="formData.fullName" type="text" placeholder="Alex Tian Ye" class="field-input" />
           </view>
           <view class="field">
             <text class="field-label">Chinese Name (Optional)</text>
