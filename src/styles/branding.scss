@@ -1,0 +1,118 @@
+/**
+ * MetaIC AI Branding Styles
+ * Based on official MetaIC design
+ */
+
+// Brand Colors
+$color-meta-gradient-start: #9333EA; // Purple
+$color-meta-gradient-end: #EC4899;   // Pink
+$color-lc-gradient-start: #FACC15;   // Yellow
+$color-lc-gradient-end: #22C55E;     // Green
+
+$color-background-dark: #1E1B4B;     // Dark purple-blue
+$color-text-primary: #FFFFFF;
+$color-text-secondary: rgba(255, 255, 255, 0.7);
+
+// Gradient Mixins
+@mixin meta-gradient {
+  background: linear-gradient(90deg, $color-meta-gradient-start 0%, $color-meta-gradient-end 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin lc-gradient {
+  background: linear-gradient(90deg, $color-lc-gradient-start 0%, $color-lc-gradient-end 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Logo Styles
+.metaic-logo {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 48rpx;
+  display: inline-block;
+  
+  .meta {
+    @include meta-gradient;
+  }
+  
+  .ic {
+    @include lc-gradient;
+  }
+}
+
+// Welcome Screen Styles (matching the image)
+.welcome-screen {
+  background: $color-background-dark;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80rpx 40rpx;
+  
+  .logo-container {
+    margin-bottom: 120rpx;
+    
+    .logo {
+      font-size: 72rpx;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 40rpx;
+    }
+    
+    .welcome-text {
+      color: $color-text-primary;
+      font-size: 36rpx;
+      text-align: center;
+      margin-bottom: 16rpx;
+    }
+    
+    .tagline {
+      color: $color-text-secondary;
+      font-size: 28rpx;
+      text-align: center;
+    }
+  }
+  
+  .sign-in-buttons {
+    width: 100%;
+    max-width: 600rpx;
+    display: flex;
+    flex-direction: column;
+    gap: 24rpx;
+    margin-bottom: 40rpx;
+    
+    .btn-google {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: $color-text-primary;
+    }
+    
+    .btn-apple {
+      background: $color-text-primary;
+      color: #000000;
+    }
+    
+    .btn-other {
+      background: linear-gradient(90deg, $color-meta-gradient-start 0%, $color-meta-gradient-end 100%);
+      color: $color-text-primary;
+    }
+  }
+  
+  .legal-text {
+    color: $color-text-secondary;
+    font-size: 24rpx;
+    text-align: center;
+    line-height: 1.6;
+    
+    .link {
+      text-decoration: underline;
+      color: $color-text-secondary;
+    }
+  }
+}
+

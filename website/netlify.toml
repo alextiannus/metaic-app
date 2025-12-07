@@ -1,0 +1,13 @@
+[build]
+  # No build command needed - static HTML site
+  command = ""
+  publish = "."
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  NODE_VERSION = "18"
+

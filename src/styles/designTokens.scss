@@ -1,0 +1,48 @@
+/**
+ * Design Tokens SCSS Variables
+ * These can be synced from Figma or manually maintained
+ */
+
+// Colors
+$color-background: #0F172A;
+$color-text-primary: #F8FAFC;
+$color-text-secondary: #94A3B8;
+$color-accent: #6366F1;
+$color-action: #10B981;
+$color-glass-bg: rgba(255, 255, 255, 0.03);
+$color-glass-border: rgba(255, 255, 255, 0.08);
+$color-sticky-note: rgba(250, 204, 21, 0.1);
+
+// Spacing (in rpx)
+$spacing-xs: 8rpx;
+$spacing-sm: 16rpx;
+$spacing-md: 32rpx;
+$spacing-lg: 40rpx;
+$spacing-xl: 60rpx;
+
+// Typography
+$font-size-sm: 24rpx;
+$font-size-base: 28rpx;
+$font-size-md: 30rpx;
+$font-size-lg: 32rpx;
+$font-size-xl: 48rpx;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Border Radius
+$radius-sm: 8rpx;
+$radius-md: 16rpx;
+$radius-lg: 20rpx;
+$radius-xl: 50rpx;
+$radius-full: 50%;
+
+// Effects
+$glass-bg: rgba(255, 255, 255, 0.03);
+$glass-backdrop-filter: blur(16px);
+$glass-border: 1px solid rgba(255, 255, 255, 0.08);
+
+$glow-primary: rgba(99, 102, 241, 0.5);
+

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaIC AI - The Future of Professional Networking</title>
+    <meta name="description" content="MetaIC AI - AI-powered digital business cards. Auto-generate profiles, discover network insights, and manage communications with your personal AI agent.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Updated to Dark Glass Nav */
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85); /* Slate-900 with opacity */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.6;
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .chat-enter {
+            animation: slideUp 0.3s ease-out forwards;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Custom Logo Styles */
+        .logo-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 overflow-x-hidden">
+
+    <!-- Navigation (Dark Themed to match Login Screen) -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-white/10 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo from Screenshot -->
+                <a href="/" class="flex items-center gap-2 group">
+                    <!-- Logo Text: M(Pink/Purple) eta(White) I(Yellow) C(Cyan) -->
+                    <span class="text-2xl tracking-tight logo-text">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-br from-fuchsia-500 to-purple-600">M</span><span class="text-white">eta</span><span class="text-yellow-400">I</span><span class="text-cyan-400">C</span>
+                    </span>
+                </a>
+
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                    <a href="#features" class="hover:text-white transition-colors">Features</a>
+                    <a href="#solutions" class="hover:text-white transition-colors">Solutions</a>
+                    <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+                    <a href="#" class="text-yellow-400 hover:text-yellow-300 transition-colors">Lions Club Portal</a>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                    <a href="#" class="hidden md:block text-slate-300 font-medium hover:text-white text-sm">Log in</a>
+                    <!-- Updated Button Color to match "Continue" button -->
+                    <a href="#" class="bg-violet-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-violet-500 transition-all shadow-lg shadow-violet-600/30">Get App</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-900">
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <!-- Adjusted blobs to match the logo colors -->
+            <div class="blob bg-fuchsia-600 w-96 h-96 rounded-full top-0 left-[-100px] mix-blend-screen opacity-20"></div>
+            <div class="blob bg-cyan-600 w-96 h-96 rounded-full bottom-0 right-[-100px] mix-blend-screen opacity-20"></div>
+            <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center lg:text-left">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <!-- Text Content -->
+                <div class="space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800 border border-slate-700 text-cyan-300 text-xs font-semibold uppercase tracking-wider shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                        Powered by Gemini AI
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight">
+                        The AI Business Card <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 via-purple-400 to-cyan-400">That Connects.</span>
+                    </h1>
+                    
+                    <p class="text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Welcome to <span class="font-bold text-white">MetaIC</span>. Auto-generate your profile, discover network insights, and manage communications with your personal AI agent.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <button class="flex items-center justify-center gap-3 bg-violet-600 text-white px-8 py-4 rounded-full font-bold hover:bg-violet-500 transition-all shadow-xl shadow-violet-600/20 active:scale-95">
+                            <i data-lucide="sparkles" class="w-5 h-5"></i>
+                            Start for Free
+                        </button>
+                        <button class="flex items-center justify-center gap-3 bg-slate-800 text-white border border-slate-700 px-8 py-4 rounded-full font-bold hover:bg-slate-700 transition-all active:scale-95">
+                            <i data-lucide="play-circle" class="w-5 h-5"></i>
+                            Watch Demo
+                        </button>
+                    </div>
+                    
+                    <div class="pt-8 flex items-center justify-center lg:justify-start gap-6 text-slate-400 text-sm">
+                        <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400"></i> Smart Insights</div>
+                        <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-yellow-400"></i> Lions Club Verified</div>
+                        <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-fuchsia-400"></i> Token Rewards</div>
+                    </div>
+                </div>
+
+                <!-- App Visual Mockup -->
+                <div class="hidden lg:block relative mt-16 lg:mt-0 animate-float">
+                    <!-- Phone Frame -->
+                    <div class="relative mx-auto border-slate-800 bg-slate-900 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-2xl shadow-purple-500/20 ring-1 ring-white/10">
+                        <!-- Buttons/Hardware keys -->
+                        <div class="h-[32px] w-[3px] bg-slate-800 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
+                        <div class="h-[46px] w-[3px] bg-slate-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
+                        <div class="h-[46px] w-[3px] bg-slate-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
+                        <div class="h-[64px] w-[3px] bg-slate-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
+                        
+                        <!-- Screen -->
+                        <div class="rounded-[2rem] overflow-hidden w-full h-full bg-slate-50 relative flex flex-col">
+                            <!-- Status Bar -->
+                            <div class="h-8 bg-white flex items-center justify-between px-6">
+                                <span class="text-[10px] font-bold">9:41</span>
+                                <div class="flex gap-1"><div class="w-3 h-3 bg-slate-900 rounded-full opacity-20"></div></div>
+                            </div>
+                            
+                            <!-- Mockup Content: Card -->
+                            <div class="p-4 space-y-4">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-bold text-lg text-slate-900">My Card</h3>
+                                    <div class="p-2 bg-slate-100 rounded-full"><i data-lucide="share-2" class="w-4 h-4 text-slate-600"></i></div>
+                                </div>
+                                
+                                <!-- Updated Card Style to match new branding hints -->
+                                <div class="bg-slate-900 p-6 rounded-2xl shadow-xl relative overflow-hidden group text-white">
+                                    <!-- Gradient Background decoration -->
+                                    <div class="absolute top-0 right-0 w-32 h-32 bg-purple-600 rounded-bl-full -mr-8 -mt-8 opacity-50 blur-xl"></div>
+                                    <div class="absolute bottom-0 left-0 w-24 h-24 bg-cyan-600 rounded-tr-full -ml-8 -mb-8 opacity-50 blur-xl"></div>
+                                    
+                                    <div class="relative z-10 flex flex-col items-center text-center">
+                                        <div class="w-16 h-16 rounded-full border-2 border-white/20 p-1 mb-3">
+                                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex" class="w-full h-full rounded-full bg-slate-800">
+                                        </div>
+                                        <h2 class="font-bold text-lg">Alex Tianye</h2>
+                                        <p class="text-xs text-cyan-300 font-medium">Founder & CEO</p>
+                                        <p class="text-[10px] text-slate-400 mt-1">MetaIC AI</p>
+                                        
+                                        <div class="flex gap-2 mt-4">
+                                            <button class="bg-white text-slate-900 text-[10px] font-bold px-4 py-1.5 rounded-full">Share</button>
+                                            <button class="bg-white/10 text-white text-[10px] font-bold px-4 py-1.5 rounded-full backdrop-blur-sm border border-white/10">Edit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Mockup Content: AI Insight -->
+                                <div class="bg-white p-4 rounded-xl shadow-lg border border-slate-100">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <div class="w-6 h-6 rounded-md bg-purple-100 flex items-center justify-center">
+                                            <i data-lucide="sparkles" class="w-3 h-3 text-purple-600"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-slate-900">AI Insight</span>
+                                    </div>
+                                    <p class="text-xs text-slate-600 leading-relaxed">
+                                        Found <span class="font-bold text-purple-600">2 Lions Club members</span> at the upcoming tech conference.
+                                    </p>
+                                    <div class="mt-3 flex gap-2">
+                                        <div class="h-6 w-6 rounded-full bg-yellow-100 border border-white flex items-center justify-center text-[8px]">🦁</div>
+                                        <div class="h-6 w-6 rounded-full bg-slate-200 border border-white"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Mockup Bottom Nav -->
+                            <div class="mt-auto bg-white border-t border-slate-100 p-4 flex justify-between items-center px-6 pb-6">
+                                <i data-lucide="user" class="text-slate-900 w-5 h-5"></i>
+                                <i data-lucide="users" class="text-slate-400 w-5 h-5"></i>
+                                <div class="bg-violet-600 p-3 rounded-full -mt-8 shadow-lg shadow-violet-500/40 border-4 border-slate-50">
+                                    <i data-lucide="sparkles" class="text-white w-5 h-5"></i>
+                                </div>
+                                <i data-lucide="settings" class="text-slate-400 w-5 h-5"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-violet-600 font-semibold tracking-wide uppercase text-sm mb-3">Core Capabilities</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">More than just a digital card. <br>It's your intelligent network manager.</h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-fuchsia-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-fuchsia-600 transition-colors">
+                        <i data-lucide="wand-2" class="w-7 h-7 text-fuchsia-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">AI Auto-Profile</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Upload a resume or card, and our Gemini-powered AI builds a stunning profile instantly.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-cyan-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-cyan-600 transition-colors">
+                        <i data-lucide="radar" class="w-7 h-7 text-cyan-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Network Insights</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        AI scans the web for your contacts' latest news, helping you find the perfect conversation starter.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-600 transition-colors">
+                        <i data-lucide="calendar-heart" class="w-7 h-7 text-purple-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Smart Comms</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Automated greetings for birthdays and promotions, drafted in your tone by AI.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-yellow-500 transition-colors">
+                        <i data-lucide="coins" class="w-7 h-7 text-yellow-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Token Economy</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Earn tokens by sharing. Lions Club members get free monthly allocations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- H5 Profile Demo Section -->
+    <section id="solutions" class="py-24 bg-slate-900 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="flex-1 text-center lg:text-left">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Your Profile, <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">Available Anywhere.</span></h2>
+                    <p class="text-slate-400 text-lg mb-8">
+                        Every user gets a unique H5 page (e.g., metaic.ai/u/alex) equipped with a <span class="text-white font-bold">Smart Chatbot</span> that answers inquiries on your behalf 24/7.
+                    </p>
+                    <ul class="space-y-4 text-slate-300 inline-block text-left">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="share-2" class="text-cyan-400"></i> Share via NFC, QR, or Link
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="message-square" class="text-fuchsia-400"></i> AI Assistant handles FAQs
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="shield-check" class="text-yellow-400"></i> Privacy controls included
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Browser Mockup -->
+                <div class="flex-1 w-full max-w-lg">
+                    <div class="bg-white rounded-2xl shadow-2xl overflow-hidden transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <!-- Browser Header -->
+                        <div class="bg-slate-100 border-b p-3 flex items-center gap-2">
+                            <div class="flex gap-1.5">
+                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                            </div>
+                            <div class="bg-white px-3 py-1 rounded text-xs text-slate-500 flex-1 text-center font-mono">metaic.ai/u/alextianye</div>
+                        </div>
+                        <!-- Page Content -->
+                        <div class="p-8 pb-12 text-center bg-slate-50">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex" class="w-24 h-24 rounded-full mx-auto border-4 border-white shadow-md mb-4">
+                            <h3 class="text-2xl font-bold text-slate-900">Alex Tianye</h3>
+                            <p class="text-violet-600 font-medium mb-6">Founder & CEO @ MetaIC AI</p>
+                            <div class="flex justify-center gap-3 mb-8">
+                                <button class="bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-semibold">Save Contact</button>
+                                <button class="bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-semibold">Book Meeting</button>
+                            </div>
+                            <!-- Mock Chatbot Embed -->
+                            <div class="bg-white p-4 rounded-xl shadow-inner border border-slate-100 text-left">
+                                <div class="flex items-start gap-3 mb-3">
+                                    <div class="w-8 h-8 rounded-full bg-violet-600 flex items-center justify-center text-white shrink-0"><i data-lucide="sparkles" class="w-4 h-4"></i></div>
+                                    <div class="bg-slate-100 p-3 rounded-2xl rounded-tl-none text-xs text-slate-600">
+                                        Hi! I'm Alex's AI. I can tell you about his experience or schedule a call.
+                                    </div>
+                                </div>
+                                <div class="relative">
+                                    <input disabled type="text" placeholder="Ask about Alex..." class="w-full bg-slate-50 border border-slate-200 rounded-full px-4 py-2 text-xs">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-violet-600 font-semibold tracking-wide uppercase text-sm mb-3">Pricing</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">Choose the plan that fits your networking needs</h3>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Free Plan -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200">
+                    <h4 class="text-2xl font-bold text-slate-900 mb-2">Free</h4>
+                    <p class="text-slate-600 mb-6">Perfect for getting started</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-slate-900">$0</span>
+                        <span class="text-slate-600">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-sm text-slate-600"><i data-lucide="check" class="w-4 h-4 text-violet-600"></i> 100 tokens/month</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-600"><i data-lucide="check" class="w-4 h-4 text-violet-600"></i> Basic profile</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-600"><i data-lucide="check" class="w-4 h-4 text-violet-600"></i> H5 share page</li>
+                    </ul>
+                    <button class="w-full bg-slate-200 text-slate-900 px-6 py-3 rounded-full font-semibold hover:bg-slate-300 transition-colors">Get Started</button>
+                </div>
+                <!-- Pro Plan -->
+                <div class="p-8 rounded-3xl bg-violet-600 text-white border-2 border-violet-500 relative">
+                    <div class="absolute top-0 right-0 bg-yellow-400 text-slate-900 px-3 py-1 rounded-bl-lg text-xs font-bold">POPULAR</div>
+                    <h4 class="text-2xl font-bold mb-2">Pro</h4>
+                    <p class="text-violet-100 mb-6">For professionals</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">$9.99</span>
+                        <span class="text-violet-100">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-sm"><i data-lucide="check" class="w-4 h-4"></i> 1,000 tokens/month</li>
+                        <li class="flex items-center gap-2 text-sm"><i data-lucide="check" class="w-4 h-4"></i> AI profile generation</li>
+                        <li class="flex items-center gap-2 text-sm"><i data-lucide="check" class="w-4 h-4"></i> Network insights</li>
+                        <li class="flex items-center gap-2 text-sm"><i data-lucide="check" class="w-4 h-4"></i> Communication plans</li>
+                    </ul>
+                    <button class="w-full bg-white text-violet-600 px-6 py-3 rounded-full font-semibold hover:bg-violet-50 transition-colors">Get Started</button>
+                </div>
+                <!-- Enterprise Plan -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200">
+                    <h4 class="text-2xl font-bold text-slate-900 mb-2">Enterprise</h4>
+                    <p class="text-slate-600 mb-6">For teams and organizations</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-slate-900">Custom</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-sm text-slate-600"><i data-lucide="check" class="w-4 h-4 text-violet-600"></i> Unlimited tokens</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-600"><i data-lucide="check" class="w-4 h-4 text-violet-600"></i> Team management</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-600"><i data-lucide="check" class="w-4 h-4 text-violet-600"></i> Custom branding</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-600"><i data-lucide="check" class="w-4 h-4 text-violet-600"></i> Priority support</li>
+                    </ul>
+                    <button class="w-full bg-slate-200 text-slate-900 px-6 py-3 rounded-full font-semibold hover:bg-slate-300 transition-colors">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-50 border-t border-slate-200 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4 group">
+                         <span class="text-xl tracking-tight logo-text font-bold">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-br from-fuchsia-500 to-purple-600">M</span><span class="text-slate-800">eta</span><span class="text-yellow-500">I</span><span class="text-cyan-500">C</span>
+                        </span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-4">Redefining professional connections with the power of Generative AI.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="#" class="hover:text-violet-600">Download</a></li>
+                        <li><a href="#pricing" class="hover:text-violet-600">Pricing</a></li>
+                        <li><a href="#" class="hover:text-violet-600">Lions Club Benefits</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="#" class="hover:text-violet-600">About Us</a></li>
+                        <li><a href="#" class="hover:text-violet-600">Blog</a></li>
+                        <li><a href="#" class="hover:text-violet-600">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="#" class="hover:text-violet-600">Help Center</a></li>
+                        <li><a href="#" class="hover:text-violet-600">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-violet-600">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-slate-500">© 2024 MetaIC AI. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-slate-400 hover:text-violet-600"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-violet-600"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-violet-600"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating AI Assistant Widget -->
+    <div id="ai-widget-container" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        
+        <!-- Chat Window (Hidden by default) -->
+        <div id="chat-window" class="hidden mb-4 w-80 sm:w-96 bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden chat-enter transform origin-bottom-right">
+            <!-- Header -->
+            <div class="bg-violet-600 p-4 flex justify-between items-center text-white">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+                        <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm">MetaIC Assistant</h3>
+                        <div class="flex items-center gap-1.5 opacity-80">
+                            <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                            <span class="text-[10px] uppercase tracking-wider font-semibold">Gemini Powered</span>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="hover:bg-white/10 p-1 rounded transition-colors"><i data-lucide="x" class="w-5 h-5"></i></button>
+            </div>
+            
+            <!-- Messages Area -->
+            <div id="chat-messages" class="h-80 overflow-y-auto p-4 bg-slate-50 space-y-4 no-scrollbar">
+                <!-- AI Welcome Message -->
+                <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center text-violet-600 shrink-0 border border-violet-200">
+                        <i data-lucide="bot" class="w-4 h-4"></i>
+                    </div>
+                    <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 text-sm text-slate-700">
+                        Hello! I'm your MetaIC Assistant. I can help you craft your profile or answer questions about the app. How can I help today?
+                    </div>
+                </div>
+                <!-- Suggested Chips -->
+                <div class="flex flex-wrap gap-2 pl-11">
+                    <button onclick="sendPreset('How do I join Lions Club?')" class="text-xs bg-violet-50 text-violet-700 px-3 py-1.5 rounded-full border border-violet-100 hover:bg-violet-100 transition-colors">Join Lions Club?</button>
+                    <button onclick="sendPreset('Generate my bio')" class="text-xs bg-violet-50 text-violet-700 px-3 py-1.5 rounded-full border border-violet-100 hover:bg-violet-100 transition-colors">Generate Bio</button>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="p-3 bg-white border-t border-slate-100">
+                <form onsubmit="handleChatSubmit(event)" class="relative">
+                    <input id="chat-input" type="text" placeholder="Type a message..." class="w-full bg-slate-50 border border-slate-200 rounded-full pl-4 pr-12 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all">
+                    <button type="submit" class="absolute right-1 top-1 bg-violet-600 text-white p-1.5 rounded-full hover:bg-violet-700 transition-colors shadow-sm">
+                        <i data-lucide="arrow-up" class="w-4 h-4"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <button onclick="toggleChat()" id="chat-toggle-btn" class="group flex items-center gap-3 bg-slate-900 hover:bg-violet-600 text-white pl-5 pr-2 py-2 rounded-full shadow-xl hover:shadow-2xl hover:shadow-violet-500/30 transition-all duration-300">
+            <span class="font-bold text-sm hidden group-hover:block transition-all">Chat with AI</span>
+            <div class="bg-white/10 p-2 rounded-full">
+                <i data-lucide="message-square" class="w-6 h-6"></i>
+            </div>
+        </button>
+    </div>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Chat Widget Logic
+        const chatWindow = document.getElementById('chat-window');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        let isOpen = false;
+
+        function toggleChat() {
+            isOpen = !isOpen;
+            if (isOpen) {
+                chatWindow.classList.remove('hidden');
+                document.getElementById('chat-toggle-btn').classList.add('translate-y-20', 'opacity-0');
+                // Focus input
+                setTimeout(() => chatInput.focus(), 100);
+            } else {
+                chatWindow.classList.add('hidden');
+                document.getElementById('chat-toggle-btn').classList.remove('translate-y-20', 'opacity-0');
+            }
+        }
+
+        function appendMessage(role, text) {
+            const div = document.createElement('div');
+            if (role === 'user') {
+                div.className = 'flex items-start justify-end gap-3 chat-enter';
+                div.innerHTML = `
+                    <div class="bg-violet-600 text-white p-3 rounded-2xl rounded-tr-none shadow-md text-sm">
+                        ${text}
+                    </div>
+                `;
+            } else {
+                div.className = 'flex items-start gap-3 chat-enter';
+                div.innerHTML = `
+                    <div class="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center text-violet-600 shrink-0 border border-violet-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                    </div>
+                    <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 text-sm text-slate-700">
+                        ${text}
+                    </div>
+                `;
+            }
+            chatMessages.appendChild(div);
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function showTyping() {
+            const div = document.createElement('div');
+            div.id = 'typing-indicator';
+            div.className = 'flex items-start gap-3 chat-enter';
+            div.innerHTML = `
+                <div class="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center text-violet-600 shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+                </div>
+                <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 text-sm flex gap-1 items-center">
+                    <span class="w-1.5 h-1.5 bg-violet-400 rounded-full animate-bounce"></span>
+                    <span class="w-1.5 h-1.5 bg-violet-400 rounded-full animate-bounce delay-75"></span>
+                    <span class="w-1.5 h-1.5 bg-violet-400 rounded-full animate-bounce delay-150"></span>
+                </div>
+            `;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTyping() {
+            const el = document.getElementById('typing-indicator');
+            if(el) el.remove();
+        }
+
+        function handleChatSubmit(e) {
+            e.preventDefault();
+            const text = chatInput.value.trim();
+            if (!text) return;
+            
+            appendMessage('user', text);
+            chatInput.value = '';
+            
+            showTyping();
+            
+            // Mock AI Response with delay
+            setTimeout(() => {
+                removeTyping();
+                let reply = "I can definitely help with that! As an AI trained on the Gemini model, I can analyze professional data to optimize your networking strategy.";
+                
+                if (text.toLowerCase().includes('lion')) {
+                    reply = "The Lions Club integration allows verified members to receive 500 free tokens monthly. You can verify your ID in the App Settings tab.";
+                } else if (text.toLowerCase().includes('bio') || text.toLowerCase().includes('profile')) {
+                    reply = "To generate your bio, simply upload your resume in the 'My Card' section. I'll draft a professional summary highlighting your key achievements.";
+                }
+                
+                appendMessage('ai', reply);
+            }, 1500);
+        }
+
+        function sendPreset(text) {
+            chatInput.value = text;
+            handleChatSubmit(new Event('submit'));
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-sm');
+                nav.style.background = 'rgba(15, 23, 42, 0.95)';
+            } else {
+                nav.classList.remove('shadow-sm');
+                nav.style.background = 'rgba(15, 23, 42, 0.85)';
+            }
+        });
+    </script>
+</body>
+</html>
+
