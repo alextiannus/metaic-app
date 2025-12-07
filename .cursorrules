@@ -1,0 +1,30 @@
+# MetaIC AI - Cursor Rules
+
+## Project Structure
+- `backend/` - Node.js/Express backend API
+- `src/` - Uni-app Vue 3 frontend
+- `website/` - Landing page (metaic.ai)
+- `figma-import/` - Figma design files
+
+## Tech Stack
+- Frontend: Vue 3, Uni-app, TypeScript, SCSS
+- Backend: Node.js, Express, TypeScript
+- Database: PostgreSQL
+- AI: Google Gemini Pro
+
+## Key Files
+- `PRD.md` - Product Requirements Document
+- `backend/API_DESIGN.md` - API documentation
+- `backend/DATABASE_SCHEMA.md` - Database schema
+- `website/` - Landing page for deployment
+
+## Development
+- Frontend dev: `npm run dev:h5`
+- Backend dev: `cd backend && npm run dev`
+- Both run on: localhost:5173 (frontend) and localhost:3000 (backend)
+
+## Deployment
+- Website: Netlify (website/ folder)
+- Backend: Railway (recommended)
+- Frontend App: Vercel (recommended)
+

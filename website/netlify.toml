@@ -1,6 +1,5 @@
 [build]
-  # No build command needed - static HTML site
-  command = ""
+  command = "echo 'No build needed'"
   publish = "."
 
 [[redirects]]
@@ -10,4 +9,3 @@
 
 [build.environment]
   NODE_VERSION = "18"
-
