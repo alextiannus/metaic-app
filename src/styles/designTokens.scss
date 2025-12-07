@@ -3,14 +3,22 @@
  * These can be synced from Figma or manually maintained
  */
 
-// Colors
-$color-background: #0F172A;
-$color-text-primary: #F8FAFC;
-$color-text-secondary: #94A3B8;
-$color-accent: #6366F1;
-$color-action: #10B981;
-$color-glass-bg: rgba(255, 255, 255, 0.03);
-$color-glass-border: rgba(255, 255, 255, 0.08);
+// Colors - Matching Figma Design System
+$color-background: #020617; // Deep space blue-black (main background)
+$color-surface: #0F172A; // Slate-900 (card surfaces)
+$color-text-primary: #FFFFFF; // White (primary text)
+$color-text-secondary: rgba(255, 255, 255, 0.6); // White/60 (secondary text)
+$color-text-tertiary: rgba(255, 255, 255, 0.4); // White/40 (tertiary text)
+$color-text-disabled: rgba(255, 255, 255, 0.2); // White/20 (disabled text)
+$color-accent-yellow: #FACC15; // Gold
+$color-accent-blue: #38BDF8; // Sky blue
+$color-success: #10B981; // Emerald-500
+$color-warning: #F59E0B; // Amber-500
+$color-error: #EF4444; // Red-500
+$color-glass-bg-80: rgba(15, 23, 42, 0.8); // Surface with 80% opacity
+$color-glass-bg-60: rgba(15, 23, 42, 0.6); // Surface with 60% opacity
+$color-glass-border: rgba(255, 255, 255, 0.1); // White/10 border
+$color-glass-border-5: rgba(255, 255, 255, 0.05); // White/5 border
 $color-sticky-note: rgba(250, 204, 21, 0.1);
 
 // Spacing (in rpx)
@@ -20,7 +28,15 @@ $spacing-md: 32rpx;
 $spacing-lg: 40rpx;
 $spacing-xl: 60rpx;
 
+// Button & Input Heights (standardized)
+$btn-padding-sm: 16rpx 24rpx;  // Small buttons
+$btn-padding-md: 20rpx 32rpx;  // Medium buttons (default)
+$btn-padding-lg: 24rpx 40rpx;  // Large buttons
+$input-padding: 20rpx 24rpx;   // Input fields
+$input-height: 80rpx;          // Standard input height
+
 // Typography
+$font-size-xs: 20rpx;
 $font-size-sm: 24rpx;
 $font-size-base: 28rpx;
 $font-size-md: 30rpx;
@@ -32,17 +48,21 @@ $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
 
-// Border Radius
-$radius-sm: 8rpx;
-$radius-md: 16rpx;
-$radius-lg: 20rpx;
-$radius-xl: 50rpx;
-$radius-full: 50%;
+// Border Radius - Matching Figma Design System
+$radius-sm: 12rpx; // Small (Inputs, small cards)
+$radius-md: 16rpx; // Medium (Buttons, badges)
+$radius-lg: 20rpx; // Large (Nested cards)
+$radius-xl: 24rpx; // XLarge (Main cards)
+$radius-2xl: 28rpx; // 2XL (Chat sections)
+$radius-full: 9999rpx; // Full (Pills, avatars) - using 9999rpx instead of 50% for better control
 
-// Effects
-$glass-bg: rgba(255, 255, 255, 0.03);
-$glass-backdrop-filter: blur(16px);
-$glass-border: 1px solid rgba(255, 255, 255, 0.08);
+// Effects - Matching Figma Glassmorphism
+$glass-bg-80: rgba(15, 23, 42, 0.8);
+$glass-bg-60: rgba(15, 23, 42, 0.6);
+$glass-bg: $glass-bg-80; // Alias for backward compatibility (defaults to 80% opacity)
+$glass-backdrop-filter: blur(24px); // backdrop-blur-xl
+$glass-border: 1px solid rgba(255, 255, 255, 0.1);
+$glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
 
 $glow-primary: rgba(99, 102, 241, 0.5);
 

@@ -1,9 +1,157 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [
 		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "MetaIC AI",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/card/index",
+			"style": {
+				"navigationBarTitleText": "Business Card",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B"
+			}
+		},
+		{
+			"path": "pages/add-contact/index",
+			"style": {
+				"navigationBarTitleText": "Add Contact",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B"
+			}
+		},
+		{
+			"path": "pages/edit-profile/index",
+			"style": {
+				"navigationBarTitleText": "Edit Profile",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B"
+			}
+		},
+		{
+			"path": "pages/subscription/index",
+			"style": {
+				"navigationBarTitleText": "Subscription",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B"
+			}
+		},
+		{
+			"path": "pages/buy-coffee/index",
+			"style": {
+				"navigationBarTitleText": "Buy Me a Coffee",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B"
+			}
+		},
+		{
+			"path": "pages/ai/communication-plan/index",
+			"style": {
+				"navigationBarTitleText": "Communication Plan",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B"
+			}
+		},
+		{
+			"path": "pages/ai/network-insights/index",
+			"style": {
+				"navigationBarTitleText": "Network Insights",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B"
+			}
+		},
+		{
+			"path": "pages/ai/communication-history/index",
+			"style": {
+				"navigationBarTitleText": "Communication History",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B"
+			}
+		},
+		{
+			"path": "pages/contact-radar/index",
+			"style": {
+				"navigationBarTitleText": "Contact Radar",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B"
+			}
+		},
+		{
+			"path": "pages/face-to-face/index",
+			"style": {
+				"navigationBarTitleText": "Face to Face Exchange",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B"
+			}
+		},
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "Login",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/login/phone-email/index",
+			"style": {
+				"navigationBarTitleText": "Login",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B"
+			}
+		},
+		{
+			"path": "pages/onboarding/index",
+			"style": {
+				"navigationBarTitleText": "Onboarding",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/share-card/index",
+			"style": {
+				"navigationBarTitleText": "Share Card",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/add-contact/photo/index",
+			"style": {
+				"navigationBarTitleText": "Add Contact",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B"
+			}
+		},
+		{
+			"path": "pages/edit-card/personal/index",
+			"style": {
+				"navigationBarTitleText": "Edit Personal Info",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B"
+			}
+		},
+		{
+			"path": "pages/edit-card/contact/index",
+			"style": {
+				"navigationBarTitleText": "Edit Contact Info",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#1E1B4B"
+			}
+		},
+		{
+			"path": "pages/edit-card/professional/index",
+			"style": {
+				"navigationBarTitleText": "Edit Professional Info",
 				"navigationBarTextStyle": "white",
 				"navigationBarBackgroundColor": "#1E1B4B"
 			}
